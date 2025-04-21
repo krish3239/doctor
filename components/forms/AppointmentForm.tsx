@@ -64,7 +64,7 @@ export const AppointmentForm = ({
         status = "scheduled";
         break;
       case "cancel":
-        status = "cancelled";
+        status = "canceled";
         break;
       default:
         status = "pending";
@@ -153,7 +153,7 @@ export const AppointmentForm = ({
             >
               {Doctors.map((doctor, i) => (
                 <SelectItem key={doctor.name + i} value={doctor.name}>
-                  <div className="flex cursor-pointer items-center gap-2">
+                  <div className="flex cursor-pointer items-center gap-2 ">
                     <Image
                       src={doctor.image}
                       width={32}
@@ -212,7 +212,7 @@ export const AppointmentForm = ({
 
         <SubmitButton
           isLoading={isLoading}
-          className={`${type === "cancel" ? "shad-danger-btn" : "shad-primary-btn"} w-full`}
+          className={`${type === "cancel" ? "shad-danger-btn bg-red-500" : "shad-primary-btn bg-green-400"} w-full`}
         >
           {buttonLabel}
         </SubmitButton>
